@@ -184,9 +184,11 @@ class _ShowcaseState extends State<Showcase> {
         duration: showCaseWidgetState.widget.scrollDuration,
         alignment: 0.5,
       );
-      setState(() {
-        _isScrollRunning = false;
-      });
+      if (mounted) {
+        setState(() {
+          _isScrollRunning = false;
+        });
+      }
     });
   }
 
